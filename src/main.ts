@@ -1,9 +1,5 @@
-console.log('compile me32');
+import {Deck } from './deck'
 
-const yolo = {};
-enum Choices {
-  YES = 1,
-  NO = 2
-}
-debugger
-console.log(Choices.NO);
+const deck = new Deck()
+console.log(deck.cards);
+
