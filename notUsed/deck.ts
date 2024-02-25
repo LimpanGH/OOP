@@ -1,3 +1,4 @@
+
 // Define an array of suits
 const SUITS: string[] = ['♠️', '♣️', '♥️', '♦️'];
 
@@ -48,6 +49,7 @@ function freshDeck(): Card[] {
 }
 
 console.log('Full Deck (unshuffled):', freshDeck());
+
 
 // Create a Deck class
 class Deck {

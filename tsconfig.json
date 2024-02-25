@@ -21,6 +21,6 @@
     "sourceMap": true,
     "preserveWatchOutput": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "notUsed/deck.ts"],
   "exclude": ["src/gtag.js"]
 }
