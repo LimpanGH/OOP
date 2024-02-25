@@ -57,7 +57,7 @@ class Deck {
     this.cards = freshDeck();
   }
 
-  // Method to shuffle the deck
+  // Shuffle the deck
   shuffle(): void {
     for (let i = this.cards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -65,23 +65,23 @@ class Deck {
     }
   }
 
-  // Method to deal a hand of cards
+  // Deal a hand of cards
   dealHand(numCards: number): Card[] {
     return this.cards.splice(0, numCards);
   }
 
-  // Method to add cards to the deck
+  // Add cards to the deck
   addToDeck(cards: Card[]): void {
     this.cards.push(...cards);
   }
 
-  // Method to print the full deck
+  // Prrint the full deck
   printFullDeck(): void {
     console.log('Full Deck (Shuffled):', this.cards);
   }
 }
 
-// Create a Player class
+// Make a Player class
 class Player {
   name: string;
   hand: Card[];
@@ -91,17 +91,17 @@ class Player {
     this.hand = [];
   }
 
-  // Method to receive a card
+  // receive a card
   receiveCard(card: Card): void {
     this.hand.push(card);
   }
 
-  // Method to calculate the total value of the hand
+  // Calculate the total value of the hand
   calculateHandValue(): number {
     return this.hand.reduce((total, card) => total + card.numericValue, 0);
   }
 
-  // Method to discard cards from the hand
+  // Throw the cards
   discard(indexes: number[]): Card[] {
     const discardedCards: Card[] = [];
     indexes.sort((a, b) => b - a);
@@ -112,7 +112,7 @@ class Player {
   }
 }
 
-// Instantiate a new deck, shuffle it, and print it
+// Make a new deck, shuffle it, and print it to the conslole
 const deck = new Deck();
 deck.shuffle();
 deck.printFullDeck();
@@ -132,18 +132,18 @@ console.log("Initial Luke's hand:", luke.hand);
 console.log("Slim's initial hand value:", slim.calculateHandValue());
 console.log("Luke's initial hand value:", luke.calculateHandValue());
 
-// Players discard some cards
+// Players throw some cards
 const slimDiscardedCards = slim.discard([0, 1]);
 const lukeDiscardedCards = luke.discard([0, 1]);
 
-// Add discarded cards back to the deck
+// Add thrown cards back to the deck
 deck.addToDeck([...slimDiscardedCards, ...lukeDiscardedCards]);
 
-// Players draw new cards
+// Players take new cards
 slim.hand.push(...deck.dealHand(2));
 luke.hand.push(...deck.dealHand(2));
 
-// Display updated deck and hands
+// Show the updated deck and hands
 console.log(
   'Deck after players discard and draw:',
   deck.cards.length,
@@ -160,13 +160,13 @@ console.log(
   luke.calculateHandValue()
 );
 
-// Function to discard all cards from a player
+// Discard all cards from a player
 function discardAll(player: Player): void {
   console.log(`${player.name} discards all cards.`);
   player.hand = [];
 }
 
-// Function to move all cards from players' hands to the deck
+// moving all the cards from players hands to the deck
 function moveAllToDeck(player1: Player, player2: Player, deck: Deck): void {
   console.log(`Moving all cards from players' hands to the deck...`);
   deck.addToDeck(player1.hand);
@@ -175,20 +175,19 @@ function moveAllToDeck(player1: Player, player2: Player, deck: Deck): void {
   player2.hand = [];
 }
 
-// Function to shuffle the deck and print it
+// Shuffle the deck and print it
 function shuffleAndPrint(deck: Deck): void {
   deck.shuffle();
   console.log('Deck shuffled and printed:', deck.cards);
 }
 
-// Discard all cards from players
 discardAll(slim);
 discardAll(luke);
 
 // Move all cards from players' hands to the deck
 moveAllToDeck(slim, luke, deck);
 
-// Display updated deck and hands
+// Show updated deck and hands
 console.log(
   'Deck after moving all cards:',
   deck.cards.length,
@@ -197,10 +196,8 @@ console.log(
 console.log("Slim's hand after moving cards to deck:", slim.hand);
 console.log("Luke's hand after moving cards to deck:", luke.hand);
 
-// Shuffle the deck and display it
 shuffleAndPrint(deck);
 
-// Function to create a paragraph element with given text
 function createParagraph(text: string): HTMLParagraphElement {
   const paragraph = document.createElement('p');
   paragraph.textContent = text;
@@ -254,7 +251,6 @@ function displayInitialSetup(deck: Deck, slim: Player, luke: Player): void {
   displayPlayerHand(luke);
 }
 
-// Display the initial setup
 displayInitialSetup(deck, slim, luke);
 
 // Discard last drawn cards from players
@@ -265,7 +261,6 @@ lukeDiscardedCards.forEach((_) => luke.hand.pop());
 slim.hand.push(...deck.dealHand(2));
 luke.hand.push(...deck.dealHand(2));
 
-// Display updated hands and deck
 displayPlayerHand(slim);
 displayPlayerHand(luke);
 displayDeck(deck);

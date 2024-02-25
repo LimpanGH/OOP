@@ -76,3 +76,30 @@ VG-nivån bedöms genom kvalitén på koden i kombination med din förmåga att 
 
 Din inlämning
 En länk till ditt repository som ska vara publikt, innehållandes all kod + en README.me
+
+##
+
+## Please run "npm install" and then "npm run dev" to view the project in the browser
+
+
+# Console should log:
+- Full Deck (unshuffled): (52) [Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card]
+  
+- Full Deck (Shuffled): (52) [Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card]
+- Initial Deck: 42 cards remaining
+- Initial Slim's hand: (5) [Card, Card, Card, Card, Card]
+- Initial Luke's hand: (5) [Card, Card, Card, Card, Card]
+- Slim's initial hand value: 28
+- Luke's initial hand value: 33
+- Deck after players discard and draw: 42 cards remaining
+- Slim's hand after discard and draw: (5) [Card, Card, Card, Card, Card]
+- Luke's hand after discard and draw: (5) [Card, Card, Card, Card, Card]
+- Slim's hand value after discard and draw: 44
+- Luke's hand value after discard and draw: 40
+- Slim discards all cards.
+- Luke discards all cards.
+- Moving all cards from players' hands to the deck...
+- Deck after moving all cards: 42 cards remaining
+- Slim's hand after moving cards to deck: []
+- Luke's hand after moving cards to deck: []
+- Deck shuffled and printed: (42) [Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card, Card]
